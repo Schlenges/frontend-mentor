@@ -122,3 +122,61 @@ img{
   grid-row: 2 / span 2;
   border-top-color: var(--blue);
 }
+
+@media only screen and (max-width: 600px) {
+  body{
+    line-height: 1.3rem;
+  }
+
+  header{
+    max-width: 100%;
+    padding: 4.8rem 1.8rem 3.3rem 1.8rem;
+  }
+
+  h1{
+    font-size: 1.5rem;
+    line-height: 1.3rem;
+  }
+
+  #cards{
+    grid-template: repeat(4, 1fr) / 1fr;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .card{
+    padding: 1.8rem;
+    padding-top: 0.8rem;
+    margin: 0.8rem 2rem;
+  }
+
+  .card-title{
+    line-height: 0;
+  }
+
+  .project-description{
+    margin-top: 1.5rem;
+  }
+
+  img{
+    width: 22%;
+    margin-top: 1.5rem;
+  }
+
+  #supervisor{
+    grid-area: 1 / 1;
+  }
+
+  #team-builder{
+    grid-area: 2 / 1;
+  }
+  
+  #karma{
+    grid-area: 3 / 1;
+  }
+  
+  #calculator{
+    grid-area: 4 / 1;
+  }
+} 
