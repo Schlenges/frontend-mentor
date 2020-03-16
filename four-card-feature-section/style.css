@@ -97,6 +97,7 @@ h1{
 img{
   float: right;
   margin-top: 1.5rem;
+  width: 22%;
 }
 
 #supervisor{
@@ -179,4 +180,87 @@ img{
   #calculator{
     grid-area: 4 / 1;
   }
-} 
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px){
+  header{
+    max-width: 80%;
+  }
+
+  #cards{
+    grid-template: repeat(4, 1fr) / 1fr;
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  img{
+    width: 22%;
+  }
+
+  #supervisor{
+    grid-area: 1 / 1;
+  }
+
+  #team-builder{
+    grid-area: 2 / 1;
+  }
+  
+  #karma{
+    grid-area: 3 / 1;
+  }
+  
+  #calculator{
+    grid-area: 4 / 1;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px){
+  header{
+    max-width: 60%;
+  }
+
+  #cards{
+    grid-template: repeat(4, 1fr) / 1fr;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .card{
+    margin: 0.8rem auto;
+    width: 52%;
+  }
+
+  #supervisor{
+    grid-area: 1 / 1;
+  }
+
+  #team-builder{
+    grid-area: 2 / 1;
+  }
+  
+  #karma{
+    grid-area: 3 / 1;
+  }
+  
+  #calculator{
+    grid-area: 4 / 1;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1220px){
+  header{
+    max-width: 50%;
+  }
+
+  #cards{
+    max-width: 100%;
+    margin: 3rem 1rem;
+  }
+
+  img{
+    margin: 0;
+    width: 25%;
+  }
+}
