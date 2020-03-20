@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:200,400,600&display=swap');
-
 :root{
   --dark-grey: hsl(234, 12%, 34%);
   --medium-grey: hsl(229, 6%, 66%);
@@ -17,10 +15,26 @@ body{
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   letter-spacing: 0.5px;
-  line-height: 1.5rem;
   color: var(--medium-grey);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.3rem;
+}
+
+header{
+  text-align: center;
+  margin: 0 auto;
+  letter-spacing: normal;
+  max-width: 100%;
+  padding: 4.8rem 1.8rem 3.3rem 1.8rem;
+}
+
+h1{
+  color: var(--dark-grey);
+}
+
+.heading{
+  font-size: 1.5rem;
 }
 
 .slim{
@@ -31,44 +45,31 @@ body{
   font-weight: 600;
 }
 
-header{
-  text-align: center;
-  max-width: 35%;
-  margin: 0 auto;
-  padding-top: 4.2rem;
-  letter-spacing: normal;
-}
-
-h1{
-  color: var(--dark-grey);
-  line-height: 1.7rem;
-  font-size: 2.3rem;
-}
-
 .project-description{
-  margin-top: 1.8rem;
   line-height: 1.5rem;
+  margin-top: 1.5rem;
 }
 
-#cards{
-  max-width: 79%;
+.cards{
   display: grid;
-  grid-template: repeat(4, 1fr) / repeat(3, 1fr);
-  margin: 3rem auto;
+  grid-template: repeat(4, 1fr) / 1fr;
+  max-width: 100%;
+  margin: 0;
+  padding: 0; /* ? */
 }
 
 .card{
   position: relative;
   background-color: white;
-  margin: 1rem;
+  margin: 0.8rem 2rem;
+  padding: 1.8rem;
+  padding-top: 0.8rem;
   border-radius: 10px;
   border-top: 4px solid;
-  padding: 2rem;
-  padding-top: 1rem;
-  /* box-shadow: 9px 24px 22px -8px rgba(216,226,238,1); */
   -webkit-box-shadow: 0px 15px 22px -4px rgb(216, 226, 238);
   -moz-box-shadow: 0px 15px 22px -4px rgb(216, 226, 238);
   box-shadow: 0px 15px 22px -4px rgb(216, 226, 238);
+  grid-column-start: 1;
 }
 
 .card::before{
@@ -85,7 +86,7 @@ h1{
 .card-title{
   color: var(--dark-grey);
   font-size: 1.3em;
-  line-height: 0.4rem;
+  line-height: 0;
   letter-spacing: normal;
   padding-top: 0.3rem;
 }
@@ -94,137 +95,72 @@ h1{
   font-size: 12px;
 }
 
-img{
+.card-icon{
   float: right;
   margin-top: 1.5rem;
   width: 22%;
 }
 
 #supervisor{
-  grid-column: 1;
-  grid-row: 2 / span 2;
+  grid-row-start: 1;
   border-top-color: var(--cyan);
 }
 
 #team-builder{
-  grid-column: 2;
-  grid-row: 1 / span 2;
+  grid-row-start: 2;
   border-top-color: var(--red);
 }
 
 #karma{
-  grid-column: 2;
-  grid-row: 3 / span 2;
+  grid-row-start: 3;
   border-top-color: var(--orange);
 }
 
 #calculator{
-  grid-column: 3;
-  grid-row: 2 / span 2;
+  grid-row-start: 4;
   border-top-color: var(--blue);
 }
 
-@media only screen and (max-width: 600px) {
+/* ---------------- Small Screen --------------- */
+@media only screen and (min-width: 600px){
   body{
-    line-height: 1.3rem;
+    line-height: 1.5rem;
   }
 
   header{
-    max-width: 100%;
-    padding: 4.8rem 1.8rem 3.3rem 1.8rem;
+    max-width: 80%;
+    padding: 4.2rem 0 0 0;
   }
 
-  h1{
-    font-size: 1.5rem;
-    line-height: 1.3rem;
-  }
-
-  #cards{
-    grid-template: repeat(4, 1fr) / 1fr;
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-  }
-
-  .card{
-    padding: 1.8rem;
-    padding-top: 0.8rem;
-    margin: 0.8rem 2rem;
-  }
-
-  .card-title{
-    line-height: 0;
+  .heading{
+    line-height: 1.7rem;
+    font-size: 2.3rem;
   }
 
   .project-description{
-    margin-top: 1.5rem;
+    margin-top: 1.8rem;
   }
 
-  img{
-    width: 22%;
-    margin-top: 1.5rem;
-  }
-
-  #supervisor{
-    grid-area: 1 / 1;
-  }
-
-  #team-builder{
-    grid-area: 2 / 1;
-  }
-  
-  #karma{
-    grid-area: 3 / 1;
-  }
-  
-  #calculator{
-    grid-area: 4 / 1;
-  }
-}
-
-@media only screen and (min-width: 600px) and (max-width: 768px){
-  header{
-    max-width: 80%;
-  }
-
-  #cards{
-    grid-template: repeat(4, 1fr) / 1fr;
+  .cards{
     max-width: 80%;
     margin: 0 auto;
-    padding: 0;
   }
 
-  img{
-    width: 22%;
-  }
-
-  #supervisor{
-    grid-area: 1 / 1;
-  }
-
-  #team-builder{
-    grid-area: 2 / 1;
-  }
-  
-  #karma{
-    grid-area: 3 / 1;
-  }
-  
-  #calculator{
-    grid-area: 4 / 1;
+  .card{
+    margin: 1rem;
+    padding: 2rem;
+    padding-top: 1rem;
   }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 992px){
+/* ---------------- Medium Screen --------------- */
+@media only screen and (min-width: 768px){
   header{
     max-width: 60%;
   }
 
-  #cards{
-    grid-template: repeat(4, 1fr) / 1fr;
+  .cards{
     max-width: 100%;
-    margin: 0;
-    padding: 0;
   }
 
   .card{
@@ -232,35 +168,71 @@ img{
     width: 52%;
   }
 
-  #supervisor{
-    grid-area: 1 / 1;
-  }
-
-  #team-builder{
-    grid-area: 2 / 1;
-  }
-  
-  #karma{
-    grid-area: 3 / 1;
-  }
-  
-  #calculator{
-    grid-area: 4 / 1;
+  .card-title{
+    line-height: 0.4rem;
   }
 }
 
-@media only screen and (min-width: 992px) and (max-width: 1220px){
+/* ---------------- Large Screen ---------------- */
+@media only screen and (min-width: 992px){
   header{
     max-width: 50%;
   }
 
-  #cards{
-    max-width: 100%;
+  .cards{
+    grid-template: repeat(4, 1fr) / repeat(3, 1fr);
     margin: 3rem 1rem;
   }
 
-  img{
+  .card{
+    margin: 1rem;
+    width: unset;
+  }
+
+  .card-icon{
     margin: 0;
     width: 25%;
+  }
+
+  #supervisor{
+    grid-column: 1;
+    grid-row: 2 / span 2;
+  }
+  
+  #team-builder{
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+  
+  #karma{
+    grid-column: 2;
+    grid-row: 3 / span 2;
+  }
+  
+  #calculator{
+    grid-column: 3;
+    grid-row: 2 / span 2;
+  }
+}
+
+/* ------------- Extrs Large Screen ------------- */
+@media only screen and (min-width: 1200px){
+  header{
+    max-width: 35%;
+  }
+
+  .cards{
+    max-width: 79%;
+    margin: 3rem auto;
+  }
+
+  .card{
+    margin: 1rem;
+    padding: 2rem;
+    padding-top: 1rem;
+  }
+
+  .card-icon{
+    width: 22%;
   }
 }
